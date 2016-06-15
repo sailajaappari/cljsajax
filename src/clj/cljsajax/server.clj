@@ -15,10 +15,7 @@
 (defroutes routes
   (GET "/" req (response/resource-response "index.html" {:root "public"}))
   (GET "/user" [] {:status 200
-                   :body (:user1 @users)}
-  (POST "/save" [] {:status 200
-                    
-                    :body (conj @users [:user2 n])}))
+                   :body (:user1 @users)})
  
   (route/resources "/")
   (route/not-found "Not found"))
